@@ -1,0 +1,7 @@
+include_recipe 'apt'
+include_recipe 'hostname'
+include_recipe 'core-bits::sshd'
+include_recipe 'core-bits::swap'
+include_recipe 'core-bits::ntpd'
+include_recipe 'core-bits::env'
+include_recipe 'core-bits::owner'
