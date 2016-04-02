@@ -1,2 +1,37 @@
 unbind-key C-a
+unbind-key C-b
 set -g prefix C-g
+
+bind s split-window -v
+bind v split-window -h
+bind j select-pane -D
+bind k select-pane -U
+bind h select-pane -L
+bind l select-pane -R
+bind -r J resize-pane -D
+bind -r K resize-pane -U
+bind -r H resize-pane -L
+bind -r L resize-pane -R
+bind r source ~/.tmux.conf
+bind -t vi-copy v begin-selection
+bind -t vi-copy y copy-selection
+unbind -t vi-copy Enter
+
+set -g visual-bell off
+set -g status-utf8 on
+set -g status-bg black
+set -g status-fg white
+set -g status-left-length 15
+set -g status-left '#[default]'
+set -g base-index 1
+set -s escape-time 0
+set -g history-limit 100000
+set -g pane-border-fg colour0
+set -g pane-active-border-fg colour7
+setw -g automatic-rename on
+setw -g mode-keys vi
+setw -g aggressive-resize on
+setw -g xterm-keys on
+set -g status-right "#[fg=white,bg=black] %a  %b %d, %Y  %l:%M%p "
+setw -g window-status-format "#[fg=black,bg=black,nobold,nounderscore,noitalics]#[default] #I  #W #[fg=black,bg=black,nobold,nounderscore,noitalics]"
+setw -g window-status-current-format "#[fg=black,bg=red,nobold,nounderscore,noitalics]#[fg=white,bg=red] #I  #W #[fg=red,bg=black,nobold,nounderscore,noitalics]"
