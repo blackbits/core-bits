@@ -12,7 +12,7 @@ if node[:hosts]
       ip_address ip
       hostname names[0]
       aliases names[1..-1]
-      action :append
+      action :create
     end
   end
 end
