@@ -1,7 +1,13 @@
 service 'ssh' do
-  provider Chef::Provider::Service::Upstart
+  if 'ubuntu' == node['platform'] &&
+     Chef::VersionConstraint.new('>= 15.04').include?(node['platform_version'])
+    provider Chef::Provider::Service::Systemd
+  else
+    provider Chef::Provider::Service::Upstart
+  end
+
   supports :restart => true
-  action [:enable,:start]
+  action [:enable, :start]
 end
 
 ssh_config 'Port' do
