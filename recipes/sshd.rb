@@ -33,3 +33,7 @@ end
 ssh_config 'UseDNS' do
   string 'UseDNS no'
 end
+
+ssh_config 'UsePAM' do
+  string 'UsePAM yes'
+end
