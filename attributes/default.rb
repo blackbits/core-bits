@@ -1,3 +1,4 @@
+default[:swapfile][:enabled] = true
 default[:swapfile][:path] = '/swapfile'
 # default[:swapfile][:size] = '256'
 
