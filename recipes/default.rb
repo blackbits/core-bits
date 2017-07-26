@@ -5,6 +5,7 @@ include_recipe 'core-bits::swap'
 include_recipe 'core-bits::ntpd'
 include_recipe 'core-bits::env'
 include_recipe 'core-bits::owner'
+include_recipe 'core-bits::syslog'
 
 if node[:hosts]
   node.hosts.each do |ip, names|
