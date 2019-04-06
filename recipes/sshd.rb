@@ -1,6 +1,6 @@
 service 'ssh' do
-  if 'ubuntu' == node['platform'] &&
-     Chef::VersionConstraint.new('>= 15.04').include?(node['platform_version'])
+  if 'ubuntu' == node[:platform] &&
+     Chef::VersionConstraint.new('>= 15.04').include?(node[:platform_version])
     provider Chef::Provider::Service::Systemd
   else
     provider Chef::Provider::Service::Upstart

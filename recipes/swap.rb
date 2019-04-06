@@ -1,9 +1,9 @@
-if node.swapfile.enabled
+if node[:swapfile][:enabled]
   bash 'swapfile' do
     # https://www.digitalocean.com/community/articles/how-to-add-swap-on-ubuntu-12-04
-    file = node.swapfile
+    file = node[:swapfile]
     path = file[:path]
-    mbs = file[:size] || node.memory.total.to_i / 1000
+    mbs = file[:size] || node[:memory][:total].to_i / 1000
     code <<-EOH
       dd if=/dev/zero of=#{path} bs=1024 count=#{mbs}k
       mkswap #{path}

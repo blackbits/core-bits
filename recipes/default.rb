@@ -8,7 +8,7 @@ include_recipe 'core-bits::owner'
 include_recipe 'core-bits::syslog'
 
 if node[:hosts]
-  node.hosts.each do |ip, names|
+  node[:hosts].each do |ip, names|
     hostsfile_entry ip do
       ip_address ip
       hostname names[0]

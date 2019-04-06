@@ -4,5 +4,5 @@ include_recipe 'tmux'
 
 template '/etc/environment' do
   source 'environment.erb'
-  variables env: node.env
+  variables env: node[:env]
 end

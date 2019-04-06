@@ -1,10 +1,10 @@
-o = node.owner
-username = o.username
+o = node[:owner]
+username = o[:username]
 home_dir = "/home/#{username}"
 ssh_dir = "#{home_dir}/.ssh"
 
 user username do
-  password o.password
+  password o[:password]
   home home_dir
   shell '/bin/zsh'
   supports manage_home: true
