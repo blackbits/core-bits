@@ -7,7 +7,7 @@ user username do
   password o[:password]
   home home_dir
   shell '/bin/zsh'
-  supports manage_home: true
+  manage_home true
 end
 
 template '/etc/sudoers' do
