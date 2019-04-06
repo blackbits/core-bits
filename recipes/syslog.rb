@@ -1,6 +1,6 @@
 directory '/var/log' do
   user 'root'
-  group 'root'
+  group 'syslog'
   mode 0755
 end
 
