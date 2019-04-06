@@ -1,7 +1,7 @@
 directory '/var/log' do
   user 'root'
   group 'syslog'
-  mode 0755
+  mode 0775
 end
 
 pattern = '\/var\/log\/syslog'
